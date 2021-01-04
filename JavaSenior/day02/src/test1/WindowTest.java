@@ -32,7 +32,7 @@ class Window extends Thread {
     }
 }
 
-public class WindowsTest {
+public class WindowTest {
     public static void main(String[] args) {
         Window w1 = new Window();
         Window w2 = new Window();
