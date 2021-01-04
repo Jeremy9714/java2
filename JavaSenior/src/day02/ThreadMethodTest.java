@@ -15,12 +15,12 @@ class HelloThread extends Thread {
     public void run() {
         for (int i = 0; i < 100; i++) {
             if (i % 2 == 0) {
-                try {
-                    sleep(50);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(Thread.currentThread().getName() + ":" + i);
+//                try {
+//                    sleep(50);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+                System.out.println(getName() + ":" + getPriority() + ":" + i);
             }
 //            if(i%20==0){
 //                Thread.yield();
@@ -35,17 +35,18 @@ public class ThreadMethodTest {
         Thread.currentThread().setName("主线程");
         //通过构造器给线程命名
         HelloThread thread = new HelloThread("线程一");
+        thread.setPriority(Thread.MAX_PRIORITY);
         thread.start();
 
         for (int i = 0; i < 100; ++i) {
             System.out.println(Thread.currentThread().getName() + ":" + i);
-            if (i == 20) {
-                try {
-                    thread.join();//
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+//            if (i == 20) {
+//                try {
+//                    thread.join();//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
         }
 
         System.out.println(thread.isAlive());
