@@ -6,6 +6,5 @@ package day01;
  */
 public class ThreadTest {
 
-    //test
 
 }
