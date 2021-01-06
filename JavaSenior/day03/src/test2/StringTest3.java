@@ -24,7 +24,7 @@ public class StringTest3 {
         char[] arr = str.toCharArray();
         int startIndex = 1;
         int endIndex = 4;
-        for(int x=startIndex,y=endIndex;x<y;x++,y--){
+        for (int x = startIndex, y = endIndex; x < y; x++, y--) {
             char temp = arr[x];
             arr[x] = arr[y];
             arr[y] = temp;
@@ -35,17 +35,18 @@ public class StringTest3 {
         //3.获取一个字符串在另一个字符串出现的次数
         String str1 = "abkkcadkabsdacababssdab";
         String str2 = "ab";
-        int fromIndex = 0;
-        int index = 0;
         int count = 0;
-        do{
-            index = str1.indexOf(str2,fromIndex);
-            if(index!=-1){
-                ++count;
-            }
-            fromIndex = index+str2.length();
-        }while(index!=-1);
+        int index = 0;
+        while ((index = str1.indexOf(str2, index)) != -1) {
+            ++count;
+            index += str2.length();
+        }
         System.out.println(count);
+
+        //方法二
+        String temp = str1.replace(str2, "");
+        int result = str1.length() - temp.length();
+        System.out.println(result / 2);
 
         //4.将字符串中数字进行排序
         String str3 = "654321";
