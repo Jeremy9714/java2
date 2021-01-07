@@ -14,16 +14,17 @@ import java.util.Date;
  */
 public class DateTimeTest {
 
-    @Test
-    public void test4(){
-        Date date1 = new Date(1990, 1, 1);
-        Date date2 = new Date(2020, 9, 8);
-        int days = (int)((date2.getTime()-date1.getTime())/(1000*3600*24))+1;
-        System.out.println(days);
-        int res = days%5;
-        System.out.println(res);
-
-    }
+//    @Test
+//    public void test4(){
+//        //未考虑偏移性
+//        Date date1 = new Date(1990, 1, 1);
+//        Date date2 = new Date(2020, 9, 8);
+//        int days = (int)((date2.getTime()-date1.getTime())/(1000*3600*24))+1;
+//        System.out.println(days);
+//        int res = days%5;
+//        System.out.println(res);
+//
+//    }
 
     @Test
     public void test3() throws ParseException {
