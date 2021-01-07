@@ -3,6 +3,9 @@ package test3;
 import org.junit.Test;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.temporal.TemporalAccessor;
 
 /**
  * JDK 8的新日期时间API
@@ -10,6 +13,52 @@ import java.time.*;
  * @create 2021-01-07-12:21
  */
 public class JDK8DateTimeTest {
+
+    /**
+     * DateTimeFormatter类: 格式化或解析时间、日期
+     * 类似SimepleDateFormat
+     */
+    @Test
+    public void test2(){
+        //实例化: 三种方式
+
+        //方式一: 预定义的标准格式(ISO_LOCAL_DATE_TIME、ISO_LOCAL_DATE、ISO_LOCAL_TIME)
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+        LocalDateTime localDateTime = LocalDateTime.now(ZoneOffset.UTC);
+        //格式化
+        String formatStr = formatter.format(localDateTime);
+        System.out.println(localDateTime);
+        System.out.println(formatStr);
+        //解析
+        TemporalAccessor parseStr = formatter.parse("2021-01-07T14:55:38.799885");
+        System.out.println(parseStr);
+        System.out.println("**************************************************");
+
+        //方式二: 本地化相关的格式(ofLocalizedDateTime(FormatStyle.LONG))
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
+        //格式化
+        String formatStr1 = formatter1.format(localDateTime);
+        System.out.println(formatStr1);
+        //解析
+        TemporalAccessor parseStr1 = formatter1.parse("2021/1/7 下午3:34");
+        System.out.println(parseStr1);
+        System.out.println("**************************************************");
+
+//        DateTimeFormatter formatter2 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+//        String formatStr2 = formatter2.format(LocalTime.now());
+//        System.out.println(formatStr2);
+
+        //方式三: 自定义的格式(ofPattern("yyyy-MM-dd hh:mm:ss E"))
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
+        //格式化
+        String formatStr2 = formatter2.format(LocalDateTime.now());
+        System.out.println(formatStr2);
+        //解析
+        TemporalAccessor parseStr2 = formatter2.parse("2021-01-07 03:36:24");
+        System.out.println(parseStr2);
+
+    }
+
     /**
      * Instant的使用
      * 类似于java.util.Date类的使用
