@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  * JDK 8之前的日期时间API
- * SimpleDateFormat、Calender
+ * SimpleDateFormat、Calendar
  * @author Chenyang
  * @create 2021-01-07-10:47
  */
