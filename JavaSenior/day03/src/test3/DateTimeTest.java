@@ -9,6 +9,7 @@ import java.util.Date;
 /**
  * JDK 8之前的日期时间API
  * SimpleDateFormat、Calendar
+ *
  * @author Chenyang
  * @create 2021-01-07-10:47
  */
@@ -16,9 +17,9 @@ public class DateTimeTest {
 
 //    @Test
 //    public void test4(){
-//        //未考虑偏移性
-//        Date date1 = new Date(1990, 1, 1);
-//        Date date2 = new Date(2020, 9, 8);
+//        //偏移性
+//        Date date1 = new Date(1990-1900, 1-1, 1);
+//        Date date2 = new Date(2020-1900, 9-1, 8);
 //        int days = (int)((date2.getTime()-date1.getTime())/(1000*3600*24))+1;
 //        System.out.println(days);
 //        int res = days%5;
