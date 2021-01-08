@@ -1,5 +1,8 @@
 package test2;
 
+import org.junit.Test;
+
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -22,9 +25,19 @@ public class AnnotationTest {
 
     }
 
+    @Test
+    public void test(){
+        Class testClass = Student.class;
+        Annotation[] annotations = testClass.getAnnotations();
+        for(Annotation a: annotations){
+            System.out.println(a);
+        }
+    }
+
 }
 
-//@MyAnnotation(value="hello")
+//@MyAnnotations({@MyAnnotation(),@MyAnnotation(value="world")})//JDK8之前重复注解的方法
+@MyAnnotation(value="world")
 @MyAnnotation() //定义的注解含有配置参数时，使用时必须指定参数值
 abstract class Person {
     public Person() {
@@ -40,5 +53,14 @@ class Student extends Person {
         @Deprecated
         Date date = new Date(2020, 10, 11);
         System.out.println(date);
+    }
+}
+
+@SuppressWarnings("unused")
+//给元注解Target赋值TYPE_PARAMETER，使得被修饰的注解可以用于修饰泛型的类型
+class Generic<@MyAnnotation T>{
+    public void show() throws @MyAnnotation RuntimeException{
+        ArrayList<@MyAnnotation String> list = new ArrayList<>();
+        int num = (@MyAnnotation int) 10L;
     }
 }
