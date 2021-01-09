@@ -15,7 +15,8 @@ import java.util.Set;
  */
 public class SetTest {
     /**
-     * HashSet
+     * HashSet的使用
+     * 线程不安全，可以存储null值
      */
     @Test
     public void test() {
@@ -36,11 +37,13 @@ public class SetTest {
     }
 
     /**
-     * LinkedHashSet
+     * LinkedHashSet的使用
+     * 可以按照添加顺序遍历
      */
     @Test
     public void test1() {
         Set set = new LinkedHashSet();
+        //再添加数据的同时，每个数据还维护了两个引用，记录次数据的前一个/后一个数据
         set.add(123);
         set.add(123);
         set.add("AA");
