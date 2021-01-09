@@ -55,5 +55,6 @@ public class ListTest {
         List subList = list.subList(0, 3);
         System.out.println(subList);
         System.out.println(list);
+
     }
 }
