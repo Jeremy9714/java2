@@ -14,8 +14,10 @@ public class DAOTest {
         CustomerDAO cus = new CustomerDAO();
         cus.add(new Customer());
         List<Customer> list = cus.getList(1);
+        cus.getValue();
 
         StudentDAO stu = new StudentDAO();
         Student student = stu.getIndex(1);
+        stu.getValue();
     }
 }
