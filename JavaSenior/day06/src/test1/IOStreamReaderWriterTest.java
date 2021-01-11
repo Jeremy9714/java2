@@ -23,7 +23,7 @@ public class IOStreamReaderWriterTest {
             //InputStreamReader(FileInputStream fis[, String charseName])
             //第二个参数是字符集，默认使用系统默认的字符集
             isr = new InputStreamReader(new FileInputStream("hello.txt"), "UTF-8");
-            osw = new OutputStreamWriter(new FileOutputStream("hello1.txt",true));
+            osw = new OutputStreamWriter(new FileOutputStream("bgk.txt",false),"GBK");
 
             char[] chars = new char[20];
             int len;
