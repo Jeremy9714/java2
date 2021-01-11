@@ -3,6 +3,7 @@ package test1;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @author Chenyang
@@ -83,5 +84,56 @@ public class FileTest {
 
         System.out.println(file2.renameTo(file1));
 
+    }
+
+    @Test
+    public void test5(){
+        File file = new File("D:\\Desktop\\Scripts\\Java\\workplace_idea\\JavaSenior\\day06");
+
+        //boolean isDirectory(): 是否是目录
+        System.out.println(file.isDirectory());
+        //boolean isFile(): 是否是文件
+        System.out.println(file.isFile());
+        //boolean exists(): 是否存在
+        System.out.println(file.exists());
+        //boolean canRead(): 是否可读
+        System.out.println(file.canRead());
+        //boolwan canWrite(): 是否可写
+        System.out.println(file.canWrite());
+        //boolean isHidden(): 是否隐藏
+        System.out.println(file.isHidden());
+    }
+
+    @Test
+    public void test6() throws IOException {
+        //创建文件目录
+        File file1 = new File("D:\\Desktop\\Scripts\\Java\\FileTest\\test1");
+        File file2 = new File("D:\\Desktop\\Scripts\\Java\\FileTest\\test1");
+
+        //boolean mkdir(): 创建文件目录，如果此文件目录存在，就不创建了；如果上层文件目录不存在，也不创建
+        boolean mkdir = file1.mkdir();
+        if(mkdir){
+            System.out.println("创建成功1");
+        }
+
+        //boolean mkdirs(): 创建文件目录，如果文件目录存在，就不创建了；如果上层目录不存在，则一并创建
+        mkdir = file2.mkdirs();
+        if(mkdir){
+            System.out.println("创建成功2");
+        }
+
+        //创建文件
+        File file3 = new File("D:\\Desktop\\Scripts\\Java\\FileTest\\hello.txt");
+
+        if (!file3.exists()){
+            //boolean createNewFile(): 创建文件，若文件存在，则不创建，返回false
+            file3.createNewFile();
+            System.out.println("文件创建成功");
+        }
+        if(file3.exists()){
+            //boolean delete(): 删除文件或文件夹
+            file3.delete();
+            System.out.println("文件删除成功");
+        }
     }
 }
