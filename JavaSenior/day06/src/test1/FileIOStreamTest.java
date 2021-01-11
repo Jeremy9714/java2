@@ -88,7 +88,7 @@ public class FileIOStreamTest {
             File destFile = new File(destPath);
             fis = new FileInputStream(srcFile);
             fos = new FileOutputStream(destFile, false);
-            byte[] bytes = new byte[1024];
+            byte[] bytes = new byte[10];
             int len;
             while ((len = fis.read(bytes)) != -1) {
                 fos.write(bytes, 0, len);
