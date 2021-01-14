@@ -2,13 +2,13 @@ package test1;
 
 import org.junit.Test;
 
+import java.lang.annotation.ElementType;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
  * 反射
- *
  * @author Chenyang
  * @create 2021-01-14-11:42
  */
@@ -90,9 +90,33 @@ public class ReflectionTest {
         System.out.println(clazz4);
 
         //同一个运行时类
-        System.out.println(clazz1==clazz2);
-        System.out.println(clazz1==clazz3);
-        System.out.println(clazz1==clazz4);
+        System.out.println(clazz1 == clazz2);
+        System.out.println(clazz1 == clazz3);
+        System.out.println(clazz1 == clazz4);
 
+    }
+
+    /*
+    Class实例可以是哪些结构的说明
+     */
+    @Test
+    public void test4() {
+        Class c1 = Object.class;
+        Class c2 = Comparable.class;
+        Class c3 = String.class;
+        Class c4 = int.class;
+        Class c5 = int[][].class;
+        Class c6 = void.class;
+        Class c8 = Override.class;
+        Class c9 = ElementType.class;
+        Class c7 = Class.class;
+
+        int[] a = new int[10];
+        int[] b = new int[100];
+
+        Class c10 = a.getClass();
+        Class c11 = b.getClass();
+        //只要元素类型和维度一样，就是同一个Class
+        System.out.println(c10==c11);
     }
 }
