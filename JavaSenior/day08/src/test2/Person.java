@@ -14,7 +14,7 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
     public Person() {
     }
 
-    @MyAnnotation(value="hi")
+    @MyAnnotation(value = "hi")
     private Person(String name) {
         this.name = name;
     }
@@ -30,13 +30,13 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
     }
 
     @MyAnnotation
-    private String show(String nation){
+    private String show(String nation) {
         System.out.println("我的国籍时" + nation);
         return nation;
     }
 
-    public String display(String interests){
-        return interests;
+    public String display(String interests, int age) throws NullPointerException, ClassCastException {
+        return interests + age;
     }
 
     @Override

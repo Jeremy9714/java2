@@ -11,7 +11,7 @@ import static java.lang.annotation.ElementType.*;
  * @create 2021-01-14-19:10
  */
 @Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, MODULE})
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface MyAnnotation {
     String value() default "hello";
 }
