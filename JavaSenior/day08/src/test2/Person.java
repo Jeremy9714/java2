@@ -39,6 +39,10 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
         return interests + age;
     }
 
+    private static void showDesc() {
+        System.out.println("静态方法调用");
+    }
+
     @Override
     public void info() {
         System.out.println("这是一个人");
