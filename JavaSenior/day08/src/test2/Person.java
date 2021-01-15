@@ -43,4 +43,13 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
     public void info() {
         System.out.println("这是一个人");
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
+                '}';
+    }
 }
