@@ -62,12 +62,28 @@ class MyInvocationHandler implements InvocationHandler {
         //proxy即为代理类对象
         //method即为代理类对象调用的方法，也是被代理类对象要调用的方法
         //args即为被调用的方法的参数列表
+
+        HumanUtil humanUtil = new HumanUtil();
+        //AOP
+        humanUtil.method1();
+
         Object returnValue = method.invoke(obj, args);
+
+        humanUtil.method2();
         //上述方法的返回值就作为当前类中invoke()方法的返回值
         return returnValue;
     }
 }
+//AOP
+class HumanUtil{
+    public void method1(){
+        System.out.println("代码块1");
+    }
 
+    public void method2(){
+        System.out.println("代码块2");
+    }
+}
 public class ProxyTest {
     public static void main(String[] args) {
         Human superMan = new SuperMan();
