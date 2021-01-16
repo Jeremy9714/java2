@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Stream API的使用
+ * Stream API的创建
  *
  * @author Chenyang
  * @create 2021-01-16-19:14
