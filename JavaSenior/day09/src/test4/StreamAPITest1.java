@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -68,6 +69,31 @@ public class StreamAPITest1 {
             list.add(c);
         }
         return list.stream();
+    }
+
+    //排序
+    @Test
+    public void test3() {
+        //sorted(): 自然排序
+        List<Integer> list = Arrays.asList(23, 43, 11, 65, 43, 32, 51, 15, 29);
+        list.stream().sorted().forEach(System.out::println);
+        System.out.println("************************");
+
+        //sorted(Comparator com): 定制排序
+        List<Employee> employees = EmployeeData.getEmployees();
+        employees.stream().sorted(Comparator.comparingInt(Employee::getAge)).forEach(System.out::println);
+//        employees.stream().sorted((e1, e2) -> -Integer.compare(e1.getAge(), e2.getAge())).forEach(System.out::println);
+        System.out.println("************************");
+
+        //练习: 按年龄排序、再按姓名排序
+        employees.stream().sorted((e1, e2) -> {
+            int num = Integer.compare(e1.getAge(), e2.getAge());
+            if (num != 0) {
+                return num;
+            } else {
+                return e1.getName().compareTo(e2.getName());
+            }
+        }).forEach(System.out::println);
     }
 
 }

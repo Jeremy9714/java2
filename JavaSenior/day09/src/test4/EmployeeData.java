@@ -20,6 +20,7 @@ public class EmployeeData {
         list.add(new Employee("Jimmy",16));
         list.add(new Employee("David",12));
         list.add(new Employee("David",12));
+        list.add(new Employee("Jeremy",34));
         return list;
     }
 }
