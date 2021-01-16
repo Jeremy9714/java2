@@ -52,5 +52,6 @@ public class ConstructorRefTest {
 
         Function<Integer, String[]> fun1 = String[]::new;
         System.out.println(Arrays.toString(fun1.apply(5)));
+
     }
 }
