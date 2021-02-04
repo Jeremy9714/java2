@@ -12,7 +12,6 @@ class Clerk {
 
     //生产产品
     public synchronized void produceProduct() {
-        notify();
         if(numOfProduct<20){
             ++numOfProduct;
             System.out.println(Thread.currentThread().getName() + "开始生产第" + numOfProduct + "个产品");
