@@ -54,6 +54,23 @@ public class StringTest3 {
         Arrays.sort(numArr);
         String str4 = new String(numArr);
         System.out.println(str4);
+
+        //5.获取两个字符串中的最大子串
+        String str5 = "abcwerthelloyuiodef";
+        String str6 = "cvhellobnm";
+        String max = str5.length() >= str6.length() ? str5 : str6;
+        String min = str5.length() < str6.length() ? str5 : str6;
+        String maxSubstring = "";
+        outer:
+        for (int i = 0; i < min.length(); ++i) {
+            for (int j = 0, k = min.length() - i; k != min.length() + 1; j++, k++) {
+                if (max.contains(min.substring(j, k))) {
+                    maxSubstring = min.substring(j, k);
+                    break outer;
+                }
+            }
+        }
+        System.out.println(maxSubstring);
     }
 }
 
