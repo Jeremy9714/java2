@@ -36,7 +36,7 @@ public class ThreadNew {
 
         try {
             //get()方法的返回值即为FutureTask构造器参数Callable实现类重写的call()方法的返回值
-            Integer sum = futureTask.get();
+            var sum = futureTask.get();
             System.out.println("100以内的偶数的总和为: " + sum);
         } catch (InterruptedException e) {
             e.printStackTrace();
