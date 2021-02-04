@@ -34,7 +34,7 @@ public class JDK8DateTimeTest {
         System.out.println(parseStr);
         System.out.println("**************************************************");
 
-        //方式二: 本地化相关的格式(ofLocalizedDateTime(FormatStyle.LONG))
+        //方式二: 本地化相关的格式(ofLocalizedDateTime(FormatStyle)、ofLocalizedDate(FormatStyle))
         DateTimeFormatter formatter1 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
         //格式化
         String formatStr1 = formatter1.format(localDateTime);
@@ -42,6 +42,16 @@ public class JDK8DateTimeTest {
         //解析
         TemporalAccessor parseStr1 = formatter1.parse("2021/1/7 下午3:34");
         System.out.println(parseStr1);
+        System.out.println("**************************************************");
+
+        DateTimeFormatter formatter1_2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+        LocalDate localDate = LocalDate.now(ZoneOffset.UTC);
+        //格式化
+        String formatStr1_2 = formatter1_2.format(localDate);
+        System.out.println(formatStr1_2);
+        //解析
+        TemporalAccessor parseStr1_2 = formatter1_2.parse("2021年3月26日星期五");
+        System.out.println(parseStr1_2);
         System.out.println("**************************************************");
 
 //        DateTimeFormatter formatter2 = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
