@@ -59,6 +59,7 @@ class Student extends Person {
 @SuppressWarnings("unused")
 //给元注解Target赋值TYPE_PARAMETER，使得被修饰的注解可以用于修饰泛型的类型
 class Generic<@MyAnnotation T>{
+    //给元注解Target赋值TYPE_USE, 使得被修饰的注解可以用于任何使用类型的地方
     public void show() throws @MyAnnotation RuntimeException{
         ArrayList<@MyAnnotation String> list = new ArrayList<>();
         int num = (@MyAnnotation int) 10L;
