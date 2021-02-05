@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * List接口: 存储有序的‘可重复的数据
+ * List接口: 存储有序的可重复的数据
  *
  * @author Chenyang
  * @create 2021-01-08-20:23
