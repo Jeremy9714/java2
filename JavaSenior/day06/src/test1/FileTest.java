@@ -39,7 +39,7 @@ public class FileTest {
         //String getName(): 获取名称
         System.out.println(file1.getName());
         //String getParent(): 获取上层文件目录路径(根据初始化时的路径字符串得出)。若无，返回null
-        System.out.println(file1.getParentFile());
+        System.out.println(file1.getParent());
         //long length(): 获取文件长度(字节数); 不能获取目录的长度
         System.out.println(file1.length());
         //long lastModified(): 获取最后一次的修改时间(毫秒数)
@@ -49,7 +49,7 @@ public class FileTest {
         System.out.println(file2.getAbsolutePath());
         System.out.println(file2.getPath());
         System.out.println(file2.getName());
-        System.out.println(file2.getParentFile());
+        System.out.println(file2.getParent());
         System.out.println(file2.length());
         System.out.println(file2.lastModified());
     }
