@@ -43,7 +43,7 @@ public class BufferedTest {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            //先关闭外层流，在关闭内层流
+            //先关闭外层流，再关闭内层流
             try {
                 if (bis != null) {
                     bis.close();
