@@ -2,9 +2,7 @@ package test3;
 
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 /**
  * 随机存取文件流
@@ -78,7 +76,7 @@ public class RandomAccessFileTest {
     }
 
     /*
-    插入内容
+    插入内容方式一
      */
     @Test
     public void test3() {
@@ -99,7 +97,7 @@ public class RandomAccessFileTest {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (raf1!=null){
+            if (raf1 != null) {
                 try {
                     raf1.close();
                 } catch (IOException e) {
@@ -108,5 +106,26 @@ public class RandomAccessFileTest {
             }
         }
 
+    }
+
+    /*
+    插入内容方式二
+     */
+    @Test
+    public void test4() throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        RandomAccessFile raf = new RandomAccessFile("hello1.txt", "rw");
+        raf.seek(3);
+        byte[] bytes = new byte[20];
+        int len;
+        while ((len = raf.read(bytes)) != -1) {
+            baos.write(bytes, 0, len);
+        }
+        raf.seek(3);
+        raf.write("QQQ".getBytes());
+        raf.write(baos.toByteArray());
+        System.out.println("插入完成");
+        raf.close();
+        baos.close();
     }
 }
