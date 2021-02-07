@@ -67,7 +67,7 @@ public class OtherStreamTest {
             }
             //将ascii码表输出到指定文件中
             for (int i = 0; i < 256; ++i) {
-                System.out.println((char) i);
+                System.out.print((char) i);
                 if (i % 50 == 0) {
                     System.out.println();
                 }
