@@ -20,7 +20,7 @@ public class OtherTest {
     @Test
     public void test1(){
         Class clazz = Person.class;
-        //后驱当前运行时类中声明为public的构造器
+        //获取当前运行时类中声明为public的构造器
         Constructor[] cons = clazz.getConstructors();
         for (Constructor con : cons) {
             System.out.println(con);
