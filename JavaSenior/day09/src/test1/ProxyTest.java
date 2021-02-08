@@ -64,11 +64,12 @@ class MyInvocationHandler implements InvocationHandler {
         //args即为被调用的方法的参数列表
 
         HumanUtil humanUtil = new HumanUtil();
-        //AOP
+        //AOP通用方法一
         humanUtil.method1();
 
         Object returnValue = method.invoke(obj, args);
 
+        //AOP通用方法二
         humanUtil.method2();
         //上述方法的返回值就作为当前类中invoke()方法的返回值
         return returnValue;
