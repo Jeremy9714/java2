@@ -39,7 +39,7 @@ public class ClassLoaderTest {
         Properties pros = new Properties();
         //读取配置文件的方式一:
 //        //此时文件默认在当前module下
-//        FileInputStream fis = new FileInputStream("jdbc.properties");
+//        FileInputStream fis = new FileInputStream("src\\jdbc1.properties");
 //        pros.load(fis);
 
         //读取配置文件的方式二: 使用ClassLoader
