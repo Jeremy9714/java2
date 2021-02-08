@@ -35,7 +35,7 @@ public class LambdaTest2 {
     }
 
     /*
-    断言型接口的使用
+    断定型接口的使用
      */
     @Test
     public void test2() {
