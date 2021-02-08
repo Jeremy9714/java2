@@ -28,6 +28,10 @@ public class ClassLoaderTest {
         //调用扩展类加载器的getParent(): 无法获取引导类加载器
         ClassLoader classLoader2 = classLoader1.getParent();
         System.out.println(classLoader2);
+
+        //引导类加载器负责Java平台核心库，无法直接获取
+        ClassLoader classLoader3 = String.class.getClassLoader();
+        System.out.println(classLoader3);
     }
 
     @Test
