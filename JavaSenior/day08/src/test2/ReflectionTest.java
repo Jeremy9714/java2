@@ -18,8 +18,8 @@ public class ReflectionTest {
      */
     @Test
     public void test1() throws Exception {
-        Class clazz = Person.class;
-        Person p = (Person) clazz.newInstance();
+        Class<Person> clazz = Person.class;
+        Person p = clazz.newInstance();
         Field id = clazz.getField("id");
         id.set(p,12);
         int pId = (int) id.get(p);
