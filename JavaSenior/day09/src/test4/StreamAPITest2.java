@@ -3,6 +3,7 @@ package test4;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -56,11 +57,14 @@ public class StreamAPITest2 {
         System.out.println(max);
 
         //min(Comparator c): 返回流中最小值
-        Optional<Employee> min = list.stream().min((e1, e2) -> Integer.compare(e1.getAge(), e2.getAge()));
+        //Optional<Employee> min = list.stream().min((e1, e2) -> Integer.compare(e1.getAge(), e2.getAge()));
+        Optional<Employee> min = list.stream().min(Comparator.comparingInt(Employee::getAge));
         System.out.println(min);
+        System.out.println();
 
         //forEach(Consumer c): 内部迭代
         list.stream().forEach(System.out::println);
+        System.out.println();
 
         //使用集合的遍历操作
         list.forEach(System.out::println);
