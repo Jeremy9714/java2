@@ -48,7 +48,7 @@ public class ConstructorRefTest {
         //Function中的R apply(T t)
         Function<Integer, String[]> fun = num -> new String[num];
         String[] apply = fun.apply(5);
-        System.out.println(apply);
+        System.out.println(Arrays.toString(apply));
 
         Function<Integer, String[]> fun1 = String[]::new;
         System.out.println(Arrays.toString(fun1.apply(5)));
