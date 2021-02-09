@@ -81,6 +81,7 @@ public class StreamAPITest1 {
 
         //sorted(Comparator com): 定制排序
         List<Employee> employees = EmployeeData.getEmployees();
+        //Comparator.comparingInt(ToIntFunction): 返回一个Comparator对象
         employees.stream().sorted(Comparator.comparingInt(Employee::getAge)).forEach(System.out::println);
 //        employees.stream().sorted((e1, e2) -> -Integer.compare(e1.getAge(), e2.getAge())).forEach(System.out::println);
         System.out.println("************************");
