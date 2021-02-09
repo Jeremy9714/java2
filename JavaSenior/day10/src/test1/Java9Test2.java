@@ -43,7 +43,7 @@ public class Java9Test2 {
 
     @Test
     public void test3() {
-        //itreate(T t, Predicate p, UnaryOperator u):
+        //itreate(T t, Predicate p, UnaryOperator u): Predicate是终止条件
         Stream.iterate(1, x -> x < 100, x -> x * 2).forEach(System.out::println);
         System.out.println();
 
